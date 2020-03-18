@@ -16,7 +16,7 @@ class Homepage extends Component {
         
         return (
             <>
-            <div class="container">
+            <div className="container">
                 <div className={"row mb-5 mt-5"}>
                     <div id="block1" className="col-lg-6">
                         <img src="/images/create.png" className={classes.center}/>
