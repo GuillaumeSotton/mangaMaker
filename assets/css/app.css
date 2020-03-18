@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes appear
+{
+    from { right: -500px; }
+    to { right: 50px; }
+}
+
+
+
+.move-enter {
+    opacity: 0.01;
+    transform: translate(-40px, 0)
+}
+
+.move-enter-active {
+    background-color: red;
+    /*opacity: 1;*/
+    /*transform: translate(0, 0);*/
+    /*transition: all 500ms ease-in;*/
+}
+
+.move-exit {
+    background-color: blue;
+    /*opacity: 1;*/
+    /*transform: translate(0, 0)*/
+}
+
+.move-exit-active {
+    opacity: 0.01;
+    transform: translate(40px, 0);
+    transition: all 500ms ease-in;
+}
+
+/** DATEPICKER **/
+.react-datepicker__week-number {
+    color: black;
+}
+
+.react-datepicker-wrapper{
+    display: block;
+}
+
+.react-datepicker__day--keyboard-selected{
+    background-color: white;
+    color: black;
+}
+
+/** Text Editor **/
+.rdw-editor-toolbar{
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.rdw-editor-wrapper{
+    border: 1px solid lightslategrey;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+/** SIDEBAR **/
+.versionNumberText{
+    position: absolute;
+    bottom: 0;
+    right: 45%;
+    color: white;
+    font-size: 60%;
+    font-style: italic;
+}
+
+/** Form Control **/
+.form-control:disabled{
+    color: #aaaaaa;
+    background-color: hsl(0,0%,95%);
+}

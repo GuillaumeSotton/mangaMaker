@@ -1,2 +1,5 @@
-# mangaMaker
- Web tool to make manga pages
+# Manga Maker
+
+* MariaDB root password: domanda42
+* MariaDB user: sv
+
