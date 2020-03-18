@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core";
-import User from "mdi-react/UserIcon";
+import User from "mdi-react/AccountIcon";
 import PropTypes from "prop-types";
 
 import { styles } from "../styles/me";

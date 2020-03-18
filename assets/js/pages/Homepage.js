@@ -17,7 +17,7 @@ class Homepage extends Component {
         return (
             <>
             <div class="container">
-                <div className={"row"} style={{marginTop: "10%",paddingTop: "1%", width: "100%"}}>
+                <div className={"row mb-5 mt-5"}>
                     <div id="block1" className="col-lg-6">
                         <img src="/images/create.png" className={classes.center}/>
                     </div>
@@ -26,14 +26,13 @@ class Homepage extends Component {
                     </div>
                 </div>
 
-                <div className="row">
-                    Ad1
+                <div className={"row mb-5 mt-5"}>
+                    <div id="block1" className="col-12 h-25">
+                        <img src="/images/add.jpg" className={classes.center}/>
+                    </div>
                 </div>
 
-                <div className= "row">
-                    <h1>Follow us on social networks :</h1>
-                    <p>Twitter, Insta</p>
-                </div>
+        
             </div>
             </>
         );
