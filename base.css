@@ -9,3 +9,8 @@ html {
   margin-right: auto;
   width: 70%;
 }
+
+#box {
+  margin-top: 10%;
+  padding-top: 1%;
+}
