@@ -2,23 +2,3 @@ html {
   background-color: black;
   color: white;
 }
-
-#create {
-  color: red;
-}
-
-#discover {
-  color: pink;
-}
-
-#ad1 {
-  color: yellow;
-  position: fixed;
-  margin-left: 90%;
-}
-
-#socials {
-  color: cyan;
-  position: fixed;
-  margin-top: 30%;
-}
