@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../css/app.css";
 
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import { Homepage } from "./pages/Homepage";
 import { User } from "./pages/User";
 import { Users } from "./pages/Users";
@@ -33,6 +34,7 @@ class App extends Component {
                     <Route path="*" component={Error404} />
                 </Switch>
             </div>
+            <Footer/>
             </BrowserRouter>
     );
     }
