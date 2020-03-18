@@ -27,7 +27,7 @@ class Homepage extends Component {
                 </div>
 
                 <div className={"row mb-5 mt-2"}>
-                    <div id="block1" className="col-12">
+                    <div id="block1" className="col-12 border border-secondary">
                         <img src="/images/add.jpg" className={`${classes.center} w-25`}/>
                     </div>
                 </div>
