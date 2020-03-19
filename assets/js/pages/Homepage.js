@@ -18,10 +18,10 @@ class Homepage extends Component {
             <>
             <div className="container">
                 <div className={"row mb-5 mt-5"}>
-                    <div id="block1" className={"col-lg-6 mb-4"}>
+                    <div id="block1" className={`col-lg-6 mb-4 ${classes.center}`}>
                         <img src="/images/create.png" className={classes.hovereffect}/>
                     </div>
-                    <div id="block2" className={"col-lg-6 mb-4"}>
+                    <div id="block2" className={`col-lg-6 mb-4 ${classes.center}`}>
                         <img src="/images/discover.png" className={classes.hovereffect}/>
                     </div>
                 </div>

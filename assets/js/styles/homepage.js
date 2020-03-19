@@ -2,12 +2,12 @@ export const homepage = () => {
   return ({
       center : {
         display: "block",
-        MarginLeft: "auto",
-        MarginRight: "auto",
+        textAlign: "center",
       },
 
       hovereffect : {
-        width:"75%",
+        width:"100%",
+        maxWidth: "450px",
         cursor:"default",
         "&:hover":{
           MsTransform:"scale(1.1)",
