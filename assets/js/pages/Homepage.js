@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 
 import { homepage } from "../styles/homepage";
+import { Link } from 'react-router-dom';
 
 @withStyles(homepage)
 class Homepage extends Component {
@@ -28,7 +29,9 @@ class Homepage extends Component {
 
                 <div className={"row mb-5 mt-2"}>
                     <div id="block1" className="col-12 border border-secondary">
-                        <img src="/images/add.jpg" className={`${classes.center} w-25`}/>
+                        <Link to={"/profile"} className={"btn btn-outline-secondary"}>
+                            <img src="/images/add.jpg" className={`${classes.center} w-25`}/>
+                        </Link>
                     </div>
                 </div>
 
