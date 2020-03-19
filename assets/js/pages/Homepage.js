@@ -19,22 +19,20 @@ class Homepage extends Component {
             <>
             <div className="container">
                 <div className={"row mb-5 mt-5"}>
-                    <div id="block1" className={`col-lg-6 mb-4 ${classes.center}`}>
+                    <div id="block1" className={`col-lg-4 mb-4 ${classes.center}`}>
                         <img src="/images/create.png" className={classes.hovereffect}/>
                     </div>
-                    <div id="block2" className={`col-lg-6 mb-4 ${classes.center}`}>
+                    <div id="block2" className={`col-lg-4 mb-4 ${classes.center}`}>
                         <img src="/images/discover.png" className={classes.hovereffect}/>
                     </div>
-                    <div id="block3" className={`col-lg-6 mb-4 ${classes.center}`}>
+                    <div id="block3" className={`col-lg-4 mb-4 ${classes.center}`}>
                         <img src="/images/submit.png" className={classes.hovereffect}/>
                     </div>
                 </div>
 
                 <div className={"row mb-5 mt-2"}>
-                    <div id="block1" className="col-12 border border-secondary">
-                        <Link to={"/profile"} className={"btn btn-outline-secondary"}>
-                            <img src="/images/add.jpg" className={`${classes.center} w-25`}/>
-                        </Link>
+                    <div id="block1" className="col-lg-12">
+                            <img src="/images/naru.png" className="img-responsive" style={{width:"100%"}}/>
                     </div>
                 </div>
 
