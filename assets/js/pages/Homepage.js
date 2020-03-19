@@ -13,16 +13,16 @@ class Homepage extends Component {
 
     render() {
         const { classes } = this.props;
-        
+
         return (
             <>
             <div className="container">
                 <div className={"row mb-5 mt-5"}>
-                    <div id="block1" className="col-lg-6 mb-4">
-                        <img src="/images/create.png" className={classes.center}/>
+                    <div id="block1" className={"col-lg-6 mb-4"}>
+                        <img src="/images/create.png" className={classes.hovereffect}/>
                     </div>
                     <div id="block2" className="col-lg-6">
-                        <img src="/images/discover.png" className={classes.center}/>
+                        <img src="/images/discover.png" className={classes.hovereffect}/>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@ class Homepage extends Component {
                     </div>
                 </div>
 
-        
+
             </div>
             </>
         );
