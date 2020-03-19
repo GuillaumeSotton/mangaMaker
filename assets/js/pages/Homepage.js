@@ -25,6 +25,9 @@ class Homepage extends Component {
                     <div id="block2" className={`col-lg-6 mb-4 ${classes.center}`}>
                         <img src="/images/discover.png" className={classes.hovereffect}/>
                     </div>
+                    <div id="block3" className={`col-lg-6 mb-4 ${classes.center}`}>
+                        <img src="/images/submit.png" className={classes.hovereffect}/>
+                    </div>
                 </div>
 
                 <div className={"row mb-5 mt-2"}>

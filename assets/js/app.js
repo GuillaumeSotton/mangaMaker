@@ -11,6 +11,7 @@ import { Footer } from "./components/Footer";
 import { Homepage } from "./pages/Homepage";
 import { User } from "./pages/User";
 import { Users } from "./pages/Users";
+import { Profile } from "./pages/Profile";
 import { Error404 } from "./pages/Error404";
 
 

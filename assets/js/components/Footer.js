@@ -8,7 +8,7 @@ class Footer extends Component {
   render() {
     return (
       <>
-        <footer className="page-footer font-small bg-primary pt-2 w-100 h-10" style={{position: "absolute", bottom: "-10px"}}>
+        <footer className="page-footer font-small bg-primary pt-2 w-100 h-10">
           <div className="d-flex bd-highlight">
             <div className="p-2 bd-highlight">
               <strong>Follow us on social media:</strong>
