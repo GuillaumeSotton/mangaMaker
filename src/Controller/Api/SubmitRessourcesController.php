@@ -54,7 +54,7 @@ class SubmitRessourcesController extends AbstractController
         $date = new DateTime();
         
         // Retrieve file attributes before moving the file
-        $attachmentPath  = './images/characters';
+        $attachmentPath  = '/app/public/images/characters';
         $filePath = $attachmentPath . DIRECTORY_SEPARATOR . "yann.png";
 
         // Move to upload directory
