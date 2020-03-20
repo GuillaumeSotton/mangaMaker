@@ -24,7 +24,7 @@ class Header extends Component {
         return (
             <>
                 <Navbar bg="primary" variant="dark" className={classes.header}>
-                    <Navbar.Brand href="/">Manga Maker</Navbar.Brand>
+                    <Navbar.Brand href="/"><img src="/images/Logo.png" className="img-responsive" style={{width:"70%"}}/></Navbar.Brand>
 
                     <NavbarCollapse className="justify-content-end">
                         <LinkContainer to="/me">
