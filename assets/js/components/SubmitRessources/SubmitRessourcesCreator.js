@@ -45,6 +45,8 @@ class SubmitRessourcesCreator extends Component {
 
         const formData = new FormData();
         formData.append("file", ressource.file);
+        console.log(ressource.file, formData);
+        
 
         this.setState({fetchInProgress: true});
         await axios.post(`${api.path}/submit/ressources`, formData);

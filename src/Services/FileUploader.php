@@ -40,8 +40,8 @@ class FileUploader {
      */
     public function upload(UploadedFile $file, string $fileName=null): ?string
     {
-        $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-        $safeFilename = normalizer_normalize($originalFilename);
+        //$originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        //$safeFilename = normalizer_normalize($originalFilename);
         if (!$fileName)
             $fileName = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
 

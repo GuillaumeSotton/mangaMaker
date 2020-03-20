@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Datetime;
+use App\Entity\SubmitRessources;
 
 class SubmitRessourcesController extends AbstractController
 {
@@ -53,16 +54,16 @@ class SubmitRessourcesController extends AbstractController
         $date = new DateTime();
         
         // Retrieve file attributes before moving the file
-        $attachmentPath  = '/public/images/uploads';
-        $filePath = $attachmentPath . DIRECTORY_SEPARATOR . $filename;
+        $attachmentPath  = './images/characters';
+        $filePath = $attachmentPath . DIRECTORY_SEPARATOR . "yann.png";
 
         // Move to upload directory
         $this->uploader->setTargetDirectory($attachmentPath);
-        $this->uploader->upload($file, $filename);
+        $this->uploader->upload($file, "yann.png");
 
         $ressource = new SubmitRessources();
         $ressource->setCreatedAt($date);
-        $ressource->setFilename($filename);
+        $ressource->setFilename("yann.png");
         $ressource->setFilePath($filePath);
         
         // Persist
@@ -70,6 +71,6 @@ class SubmitRessourcesController extends AbstractController
         $em->persist($ressource);
         $em->flush();
 
-        
+        return new Response("ok");
     }
 }
