@@ -25,7 +25,7 @@ services:
     working_dir: /app
     environment:
       - DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mariadb:3306/${MYSQL_DATABASE}
-      - PHP_IDE_CONFIG=serverName=manga_maker_webapp_php:latest
+      - XDEBUG_CONFIG=remote_host=host.docker.internal remote_port=9000 remote_enable=1
     depends_on:
       - mariadb
 

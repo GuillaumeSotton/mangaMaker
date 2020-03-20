@@ -26,13 +26,15 @@ class Homepage extends Component {
                         <img src="/images/discover.png" className={classes.hovereffect}/>
                     </div>
                     <div id="block3" className={`col-lg-4 mb-4 ${classes.center}`}>
-                        <img src="/images/submit.png" className={classes.hovereffect}/>
+                        <Link to={"/ressources/submissions"}>
+                            <img src="/images/submit.png" className={classes.hovereffect}/>
+                        </Link>
                     </div>
                 </div>
 
                 <div className={"row mb-5 mt-2"}>
                     <div id="block1" className="col-lg-12">
-                            <img src="/images/naru.png" className="img-responsive" style={{width:"100%"}}/>
+                        <img src="/images/naru.png" className="img-responsive" style={{width:"100%"}}/>
                     </div>
                 </div>
 

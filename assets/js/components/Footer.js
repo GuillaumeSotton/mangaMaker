@@ -15,12 +15,12 @@ class Footer extends Component {
             </div>
             <div className="p-2 bd-highlight">
               <a href="https://www.instagram.com/jesuistropdrole/">
-                <Instagram />
+                <Instagram color="black"/>
               </a>
             </div>
             <div className="p-2 bd-highlight">
               <a href="https://twitter.com/RasenCSGO">
-                <Twitter />
+                <Twitter color="black"/>
               </a>
             </div>
             <div className="ml-auto mr-2 p-2 bd-highlight">

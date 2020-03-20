@@ -11,6 +11,7 @@ import { Footer } from "./components/Footer";
 import { Homepage } from "./pages/Homepage";
 import { User } from "./pages/User";
 import { Users } from "./pages/Users";
+import { SubmitRessources } from "./pages/SubmitRessources";
 import { Profile } from "./pages/Profile";
 import { Error404 } from "./pages/Error404";
 
@@ -30,6 +31,7 @@ class App extends Component {
             <div className={"d-flex"}>
                 <Switch>
                     <Route path="/" exact component={Homepage}/>
+                    <Route path="/ressources/submissions" exact component={SubmitRessources}/>
                     <Route exact path="/users/:id(\d+)" component={User}/>
                     <Route path="/users" exact component={Users}/>
                     <Route path="*" component={Error404} />
