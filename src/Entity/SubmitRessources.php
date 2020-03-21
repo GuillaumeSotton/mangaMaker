@@ -31,6 +31,27 @@ class SubmitRessources
      */
     private $filepath;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $type;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Genre", inversedBy="submitRessources")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $genre;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Universe", inversedBy="submitRessources")
+     */
+    private $universe;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Character", inversedBy="submitRessources")
+     */
+    private $perso;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +89,54 @@ class SubmitRessources
     public function setFilepath(string $filepath): self
     {
         $this->filepath = $filepath;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getGenre(): ?Genre
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?Genre $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getUniverse(): ?Universe
+    {
+        return $this->universe;
+    }
+
+    public function setUniverse(?Universe $universe): self
+    {
+        $this->universe = $universe;
+
+        return $this;
+    }
+
+    public function getPerso(): ?Character
+    {
+        return $this->perso;
+    }
+
+    public function setPerso(?Character $perso): self
+    {
+        $this->perso = $perso;
 
         return $this;
     }

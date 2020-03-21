@@ -31,7 +31,7 @@ class Header extends Component {
                             <Me/>
                         </LinkContainer>
 
-                        <LinkContainer to="/users">
+                        <LinkContainer to="/admin">
                             <Nav.Link><Wrench color="#FFF" size={25}/></Nav.Link>
                         </LinkContainer>
                     </NavbarCollapse>
