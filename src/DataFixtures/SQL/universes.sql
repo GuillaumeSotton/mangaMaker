@@ -1,5 +1,14 @@
-INSERT INTO `universes` VALUES
-(1, "Naruto");
+INSERT INTO `universes` (`id`, `name`) VALUES (1, 'Naruto');
+INSERT INTO `universes` (`id`, `name`) VALUES (2, 'One Piece');
+INSERT INTO `universes` (`id`, `name`) VALUES (3, 'Bleach');
+INSERT INTO `universes` (`id`, `name`) VALUES (4, 'Attack on Titan');
+INSERT INTO `universes` (`id`, `name`) VALUES (5, 'Black Clover');
+INSERT INTO `universes` (`id`, `name`) VALUES (6, 'Fairy Tail');
+INSERT INTO `universes` (`id`, `name`) VALUES (7, 'Fullmetal Alchemist');
+INSERT INTO `universes` (`id`, `name`) VALUES (8, 'Dragon Ball');
+INSERT INTO `universes` (`id`, `name`) VALUES (9, 'Death Note');
+INSERT INTO `universes` (`id`, `name`) VALUES (10, 'Seven Deadly Sins');
+
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

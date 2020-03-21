@@ -1,5 +1,13 @@
-INSERT INTO `characters` VALUES
-(1, 1, "Yann");
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (2, 1, 'Naruto Uzumaki');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (3, 1, 'Sasuke Uchiwa');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (4, 1, 'Sakura Haruno');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (5, 1, 'Jiraya');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (6, 1, 'Kakashi Hatake');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (7, 1, 'Konohamaru Sarutobi');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (8, 1, 'Shikamaru Nara');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (9, 1, 'Ino Yamanaka');
+INSERT INTO `characters` (`id`, `universe_id`, `name`) VALUES (10, 1, 'Chôji Hakimichi');
+
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
