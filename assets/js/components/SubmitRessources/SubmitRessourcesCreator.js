@@ -68,7 +68,13 @@ class SubmitRessourcesCreator extends Component {
 
         this.setState({fetchInProgress: true});
         await axios.post(`${api.path}/submit/ressources`, formData);
-        this.setState({fetchInProgress: false});
+        this.setState({fetchInProgress: false,
+            file: null,
+            genre: null,
+            perso: null,
+            type: null,
+            universe: null
+        });
     };
 
     //Check if all mandatory inputs have been completed

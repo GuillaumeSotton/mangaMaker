@@ -15,6 +15,7 @@ export const homepage = () => {
           transform:"scale(1.1)",
           WebkitTransition: "all 0.20s",
           transition: "all 0.20s",
+          cursor: "pointer"
         },
       }
   });

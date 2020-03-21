@@ -12,6 +12,14 @@ class Homepage extends Component {
         classes: PropTypes.object,
     };
 
+    onMouseEnter = () => {
+
+    };
+
+    onMouseOut = () => {
+
+    };
+
     render() {
         const { classes } = this.props;
 
