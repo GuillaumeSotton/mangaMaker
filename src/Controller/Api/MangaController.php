@@ -65,10 +65,14 @@ class MangaController extends AbstractController
         $file = $request->files->get("file");
         $chapters = $request->request->get("chapters");
         $characters = $request->request->get("characters");
+        $genreId = $request->request->get("genre");
+        $genre = $genreRepository->find(["id" => $genreId]);
         $language = $request->request->get("language");
         $name = $request->request->get("name");
         $status = $request->request->get("status");
         $summary = $request->request->get("summary");
+        $universeId = $request->request->get("universe");
+        $universe = $universeRepository->find(["id" => $universeId]);
         $volumes = $request->request->get("volumes");
         $user = $this->getUser();
 
@@ -85,17 +89,19 @@ class MangaController extends AbstractController
         $this->uploader->upload($file, $filename);
 
         $manga = new Manga();
-        $manga->setCreatedAt($date);
-        $manga->setCharacters(explode(",",$characters));
         $manga->setAuthor($user);
+        $manga->setChapters($chapters);
+        $manga->setCharacters(explode(",",$characters));
+        $manga->setCreatedAt($date);
         $manga->setFile($filename);
         $manga->setFilePath($filePath);
-        $manga->setChapters($chapters);
+        $manga->setGenre($genre);
         $manga->setLanguage($language);
         $manga->setName($name);
-        $manga->setSummary($summary);
-        $manga->setVolumes($volumes);
         $manga->setStatus($status);
+        $manga->setSummary($summary);
+        $manga->setUniverse($universe);
+        $manga->setVolumes($volumes);
         
         // Persist
         $em = $this->getDoctrine()->getManager();

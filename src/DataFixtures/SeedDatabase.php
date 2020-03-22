@@ -22,7 +22,8 @@ class SeedDatabase extends Fixture implements FixtureGroupInterface, OrderedFixt
 
         try {
             $conn->prepare(file_get_contents($root . 'universes.sql'))->execute();
-            $conn->prepare(file_get_contents($root . 'characters.sql'))->execute();
+            $conn->prepare(file_get_contents($root . 'characters.sql'))->execute();            
+            $conn->prepare(file_get_contents($root . 'genres.sql'))->execute();            
             $conn->prepare(file_get_contents($root . 'users.sql'))->execute();
         } catch (DBALException $e) {
             echo $e->getMessage();

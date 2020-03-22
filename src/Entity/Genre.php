@@ -35,9 +35,15 @@ class Genre
      */
     private $submitRessources;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Manga", mappedBy="genre")
+     */
+    private $mangas;
+
     public function __construct()
     {
         $this->submitRessources = new ArrayCollection();
+        $this->mangas = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,6 +88,37 @@ class Genre
             // set the owning side to null (unless already changed)
             if ($submitRessource->getGenre() === $this) {
                 $submitRessource->setGenre(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Manga[]
+     */
+    public function getMangas(): Collection
+    {
+        return $this->mangas;
+    }
+
+    public function addManga(Manga $manga): self
+    {
+        if (!$this->mangas->contains($manga)) {
+            $this->mangas[] = $manga;
+            $manga->setGenre($this);
+        }
+
+        return $this;
+    }
+
+    public function removeManga(Manga $manga): self
+    {
+        if ($this->mangas->contains($manga)) {
+            $this->mangas->removeElement($manga);
+            // set the owning side to null (unless already changed)
+            if ($manga->getGenre() === $this) {
+                $manga->setGenre(null);
             }
         }
 

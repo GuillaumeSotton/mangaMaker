@@ -97,6 +97,18 @@ class Manga
      */
     private $created_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Universe", inversedBy="mangas")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $universe;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Genre", inversedBy="mangas")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $genre;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -230,6 +242,30 @@ class Manga
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUniverse(): ?Universe
+    {
+        return $this->universe;
+    }
+
+    public function setUniverse(?Universe $universe): self
+    {
+        $this->universe = $universe;
+
+        return $this;
+    }
+
+    public function getGenre(): ?Genre
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?Genre $genre): self
+    {
+        $this->genre = $genre;
 
         return $this;
     }

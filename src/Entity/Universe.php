@@ -39,10 +39,16 @@ class Universe
      */
     private $submitRessources;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Manga", mappedBy="universe")
+     */
+    private $mangas;
+
     public function __construct()
     {
         $this->characters = new ArrayCollection();
         $this->submitRessources = new ArrayCollection();
+        $this->mangas = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -118,6 +124,37 @@ class Universe
             // set the owning side to null (unless already changed)
             if ($submitRessource->getUniverse() === $this) {
                 $submitRessource->setUniverse(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Manga[]
+     */
+    public function getMangas(): Collection
+    {
+        return $this->mangas;
+    }
+
+    public function addManga(Manga $manga): self
+    {
+        if (!$this->mangas->contains($manga)) {
+            $this->mangas[] = $manga;
+            $manga->setUniverse($this);
+        }
+
+        return $this;
+    }
+
+    public function removeManga(Manga $manga): self
+    {
+        if ($this->mangas->contains($manga)) {
+            $this->mangas->removeElement($manga);
+            // set the owning side to null (unless already changed)
+            if ($manga->getUniverse() === $this) {
+                $manga->setUniverse(null);
             }
         }
 
