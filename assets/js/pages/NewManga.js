@@ -106,7 +106,7 @@ class NewManga extends Component {
               <div className="row">
                 <div className="col-3 mt-3 mb-3">
                   <div className="custom-file">
-                      <input type="file" accept=".png" className="custom-file-input" id="customFile" onChange={this.onFileSelected} />
+                      <input type="file" accept=".png" className="custom-file-input btn-block" id="customFile" onChange={this.onFileSelected} />
                       <label className="custom-file-label" htmlFor="customFile">{file && "File added" || "Add file..."}</label>
                   </div>
                   <div className="form-group border border-secondary" style={{height: "90%"}}>
