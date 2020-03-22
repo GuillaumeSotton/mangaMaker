@@ -12,14 +12,6 @@ class Homepage extends Component {
         classes: PropTypes.object,
     };
 
-    onMouseEnter = () => {
-
-    };
-
-    onMouseOut = () => {
-
-    };
-
     render() {
         const { classes } = this.props;
 
@@ -32,10 +24,10 @@ class Homepage extends Component {
                             <img src="/images/create.png" className={classes.hovereffect}/>
                         </Link>
                     </div>
-                    <div id="block4" className={`col-lg-3 mb-4 ${classes.center}`}>
+                    <div id="block4" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
                         <img src="/images/make.png" className={classes.hovereffect}/>
                     </div>
-                    <div id="block2" className={`col-lg-3 mb-4 ${classes.center}`}>
+                    <div id="block2" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
                         <Link to={"/mangas"}>
                             <img src="/images/discover.png" className={classes.hovereffect}/>
                         </Link>
