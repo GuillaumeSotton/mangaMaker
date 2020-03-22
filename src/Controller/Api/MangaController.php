@@ -49,30 +49,31 @@ class MangaController extends AbstractController
     {
         /** @var UploadedFile $file */
         $file = $request->files->get("file");
-        $author = $request->request->get("author");
         $chapters = $request->request->get("chapters");
+        $characters = $request->request->get("chracters");
         $language = $request->request->get("language");
         $name = $request->request->get("name");
         $status = $request->request->get("status");
         $summary = $request->request->get("summary");
         $volumes = $request->request->get("volumes");
+        $user = $this->getUser();
 
         // Compute unique file name
         $date = new DateTime();
-        
         $filename = $date->format('Y-m-d_H-i-s') . "_" . $name . "_" . uniqid() . ".png";
         
         // Retrieve file attributes before moving the file
         $attachmentPath  = '/app/public/images/mangas';
         $filePath = $attachmentPath . DIRECTORY_SEPARATOR . $filename;
 
-
         // Move to upload directory
         $this->uploader->setTargetDirectory($attachmentPath);
         $this->uploader->upload($file, $filename);
 
         $manga = new Manga();
-        $manga->setAuthor($author);
+        $manga->setCreatedAt($date);
+        $manga->setCharacters($characters);
+        $manga->setAuthor($user);
         $manga->setFile($filename);
         $manga->setFilePath($filePath);
         $manga->setChapters($chapters);

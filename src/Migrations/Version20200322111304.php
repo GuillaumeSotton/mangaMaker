@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200322100355 extends AbstractMigration
+final class Version20200322111304 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20200322100355 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('CREATE TABLE manga (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, status VARCHAR(255) NOT NULL, chapters INT DEFAULT NULL, volumes INT DEFAULT NULL, summary LONGTEXT NOT NULL, language VARCHAR(255) NOT NULL, characters LONGTEXT DEFAULT NULL COMMENT \'(DC2Type:array)\', file VARCHAR(255) NOT NULL, filepath VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE manga ADD author_id INT NOT NULL, ADD created_at DATETIME NOT NULL');
+        $this->addSql('ALTER TABLE manga ADD CONSTRAINT FK_765A9E03F675F31B FOREIGN KEY (author_id) REFERENCES users (id)');
+        $this->addSql('CREATE INDEX IDX_765A9E03F675F31B ON manga (author_id)');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +32,8 @@ final class Version20200322100355 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP TABLE manga');
+        $this->addSql('ALTER TABLE manga DROP FOREIGN KEY FK_765A9E03F675F31B');
+        $this->addSql('DROP INDEX IDX_765A9E03F675F31B ON manga');
+        $this->addSql('DROP author_id, DROP created_at');
     }
 }

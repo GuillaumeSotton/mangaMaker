@@ -16,11 +16,6 @@ class Manga
      */
     private $id;
 
-   /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $author;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -66,21 +61,20 @@ class Manga
      */
     private $filepath;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="mangas")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(string $author): self
-    {
-        $this->author = $author;
-
-        return $this;
     }
 
     public function getName(): ?string
@@ -187,6 +181,30 @@ class Manga
     public function setFilepath(string $filepath): self
     {
         $this->filepath = $filepath;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }

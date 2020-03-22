@@ -66,6 +66,11 @@ class User implements UserInterface
      */
     private $last_name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Manga", mappedBy="author")
+     */
+    private $mangas;
+
     public function __construct()
     {
         $this->accidents = new ArrayCollection();
@@ -194,6 +199,37 @@ class User implements UserInterface
     public function setLastName(string $last_name): self
     {
         $this->last_name = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Manga[]
+     */
+    public function getMangas(): Collection
+    {
+        return $this->mangas;
+    }
+
+    public function addManga(Manga $manga): self
+    {
+        if (!$this->mangas->contains($manga)) {
+            $this->mangas[] = $manga;
+            $manga->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeManga(Manga $manga): self
+    {
+        if ($this->mangas->contains($manga)) {
+            $this->mangas->removeElement($manga);
+            // set the owning side to null (unless already changed)
+            if ($manga->getAuthor() === $this) {
+                $manga->setAuthor(null);
+            }
+        }
 
         return $this;
     }

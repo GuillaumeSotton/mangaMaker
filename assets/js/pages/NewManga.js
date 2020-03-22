@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 
 import { ProgressButton } from "../components/ProgressButton";
-import filesize from "filesize";
+import { StatusSelector } from "../components/StatusSelector";
+import { LanguageSelector } from "../components/LanguageSelector";
+import { CharacterSelector } from "../components/Characters/CharacterSelector";
 import axios from "axios";
 import { api } from "../config";
 
 class NewManga extends Component {
 
-
   state = {
-    author: "",
     chapters: null,
+    characters: [],
     fetchInProgress: false,
     file: null,
     imagePreviewUrl: null,
@@ -22,9 +23,6 @@ class NewManga extends Component {
   }
 
   onChange = (name, value) => {
-    if(name === "author"){
-        this.setState({author: value});
-    }
     if(name === "chapters"){
       this.setState({chapters: Number.parseInt(value)});
     }
@@ -46,6 +44,9 @@ class NewManga extends Component {
     if(name === "volumes"){
         this.setState({volumes: Number.parseInt(value)});
     }
+    if(name === "characters"){
+      this.setState({characters: value});
+    }
 };
 
   onFileSelected = (event) => {
@@ -63,11 +64,10 @@ class NewManga extends Component {
   }
 
   addManga = async () => {
-    const { author, chapters, file, language, name, status, summary, volumes } = this.state;
+    const { chapters, file, language, name, status, summary, volumes } = this.state;
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("author", author);
     formData.append("chapters", chapters);
     formData.append("language", language);
     formData.append("name", name);
@@ -78,8 +78,8 @@ class NewManga extends Component {
     this.setState({fetchInProgress: true});
     await axios.post(`${api.path}/new-manga`, formData);
     this.setState({fetchInProgress: false,
-      author: "",
       chapters: null,
+      characters: [],
       file: null,
       imagePreviewUrl: null,
       language: "",
@@ -92,7 +92,10 @@ class NewManga extends Component {
 
 
   render() {
-    const { author, chapters, fetchInProgress, file, imagePreviewUrl, language, name, status, summary, volumes } = this.state;
+    const { chapters, characters, fetchInProgress, file, imagePreviewUrl, language, name, status, summary, volumes } = this.state;
+
+    console.log(characters);
+
     return (
       <>
         <div className={"container"}>
@@ -114,24 +117,21 @@ class NewManga extends Component {
                 </div>
                 <div className="col-5">
                   <div className="mt-3">
+                    <label htmlFor="name">Name:</label>
                     <input type="text" className={`form-control }`} placeholder="..."
-                      id="name" name={"name"} value={name || "Name"} onChange={e => this.onChange(e.target.name, e.target.value)} />
+                      id="name" name={"name"} value={name || ""} onChange={e => this.onChange(e.target.name, e.target.value)} />
                   </div>
                   <div className="mt-3">
-                    <input type="text" className={`form-control }`} placeholder="..."
-                      id="author" name={"author"} value={author || "Author"} onChange={e => this.onChange(e.target.name, e.target.value)} />
+                    <label htmlFor="Language">Language:</label>
+                    <LanguageSelector id="language" name="language" value={language || ""} onChange={this.onChange}/>
                   </div>
                   <div className="mt-3">
-                    <input type="text" className={`form-control }`} placeholder="..."
-                      id="language" name={"language"} value={language || "Language"} onChange={e => this.onChange(e.target.name, e.target.value)} />
+                    <label htmlFor="description">Main characters:</label>
+                    <CharacterSelector id="main_characters" name="characters" value={characters} onChange={this.onChange} multiple/>
                   </div>
                   <div className="mt-3">
-                    <input type="text" className={`form-control }`} placeholder="..."
-                      id="main_characters" name={"main_characters"} value={"Main characters"} onChange={e => this.onChange(e.target.name, e.target.value)} readOnly/>
-                  </div>
-                  <div className="mt-3">
-                    <input type="text" className={`form-control }`} placeholder="..."
-                      id="status" name={"status"} value={status || "Status"} onChange={e => this.onChange(e.target.name, e.target.value)} />
+                    <label htmlFor="description">Status:</label>
+                    <StatusSelector id="status" name="status" value={status || ""} onChange={this.onChange}/>
                   </div>
                   <div className="mt-3 mb-3">
                     <div className="container">
@@ -165,10 +165,10 @@ class NewManga extends Component {
           <div className="container">
             <div className="row">
               <div className="col-6 mb-3 border border-secondary">
-                <label htmlFor="description">Chapters:</label>
+                <label htmlFor="chapters">Chapters:</label>
               </div>
               <div className="col-6 mb-3 border border-secondary">
-                <label htmlFor="description">Volumes:</label>
+                <label htmlFor="volumes">Volumes:</label>
               </div>
             </div>
           </div>
