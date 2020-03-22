@@ -113,8 +113,6 @@ class NewManga extends Component {
   render() {
     const { chapters, characters, fetchInProgress, file, genre, imagePreviewUrl, language, name, status, summary, universe, volumes } = this.state;
 
-    console.log(characters, typeof (characters));
-
     return (
       <>
         <div className={"container"}>
