@@ -27,7 +27,7 @@ class Homepage extends Component {
             <>
             <div className="container">
                 <div className={"row mb-5 mt-5"}>
-                    <div id="block1" className={`col-lg-3 mb-4 ${classes.center}`}>
+                    <div id="block1" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
                         <Link to={"/new-manga"}>
                             <img src="/images/create.png" className={classes.hovereffect}/>
                         </Link>
@@ -40,7 +40,7 @@ class Homepage extends Component {
                             <img src="/images/discover.png" className={classes.hovereffect}/>
                         </Link>
                     </div>
-                    <div id="block3" className={`col-lg-3 mb-4 ${classes.center}`}>
+                    <div id="block3" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
                         <Link to={"/ressources/submissions"}>
                             <img src="/images/submit.png" className={classes.hovereffect}/>
                         </Link>
