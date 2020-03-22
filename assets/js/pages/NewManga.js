@@ -45,7 +45,8 @@ class NewManga extends Component {
         this.setState({volumes: Number.parseInt(value)});
     }
     if(name === "characters"){
-      this.setState({characters: value});
+      const arrayToSubmit = Object.values(value);
+      this.setState({characters: arrayToSubmit});
     }
 };
 
@@ -95,7 +96,7 @@ class NewManga extends Component {
   render() {
     const { chapters, characters, fetchInProgress, file, imagePreviewUrl, language, name, status, summary, volumes } = this.state;
 
-    console.log(characters);
+    console.log(characters, typeof(characters));
 
     return (
       <>

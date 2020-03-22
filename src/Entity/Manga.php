@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MangaRepository")
@@ -13,62 +14,86 @@ class Manga
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * 
+     * @Groups({"essential"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"essential"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"essential"})
      */
     private $status;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * 
+     * @Groups({"essential"})
      */
     private $chapters;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * 
+     * @Groups({"essential"})
      */
     private $volumes;
 
     /**
      * @ORM\Column(type="text")
+     * 
+     * @Groups({"essential"})
      */
     private $summary;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"essential"})
      */
     private $language;
 
     /**
      * @ORM\Column(type="array", nullable=true)
+     * 
+     * @Groups({"essential"})
      */
     private $characters = [];
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"essential"})
      */
     private $file;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"essential"})
      */
     private $filepath;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="mangas")
      * @ORM\JoinColumn(nullable=false)
+     * 
+     * @Groups({"essential"})
      */
     private $author;
 
     /**
      * @ORM\Column(type="datetime")
+     * 
+     * @Groups({"essential"})
      */
     private $created_at;
 

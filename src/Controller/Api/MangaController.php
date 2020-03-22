@@ -6,6 +6,7 @@ namespace App\Controller\Api;
 
 use App\Entity\User;
 use App\Entity\Manga;
+use App\Repository\MangaRepository;
 use App\Services\FileUploader;
 use App\Repository\UserRepository;
 use App\Repository\GenreRepository;
@@ -37,6 +38,19 @@ class MangaController extends AbstractController
     {
         $this->serializer = $serializer;
         $this->uploader = $uploader;
+    }
+
+    /**
+     * @Route("/mangas", name="getMangas", methods={"GET"})
+     *
+     * @param MangaRepository $mangaRepository
+     * @return Response
+     */
+    public function getMangas(MangaRepository $mangaRepository)
+    {
+        $mangas = $mangaRepository->findAll();
+        $data = $this->serializer->serialize($mangas, "json", ['groups' => 'essential']);
+        return new Response($data);
     }
   
     /**
@@ -72,7 +86,7 @@ class MangaController extends AbstractController
 
         $manga = new Manga();
         $manga->setCreatedAt($date);
-        $manga->setCharacters($characters);
+        $manga->setCharacters(str_split($characters));
         $manga->setAuthor($user);
         $manga->setFile($filename);
         $manga->setFilePath($filePath);

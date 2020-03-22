@@ -36,7 +36,9 @@ class Homepage extends Component {
                         <img src="/images/make.png" className={classes.hovereffect}/>
                     </div>
                     <div id="block2" className={`col-lg-3 mb-4 ${classes.center}`}>
-                        <img src="/images/discover.png" className={classes.hovereffect}/>
+                        <Link to={"/mangas"}>
+                            <img src="/images/discover.png" className={classes.hovereffect}/>
+                        </Link>
                     </div>
                     <div id="block3" className={`col-lg-3 mb-4 ${classes.center}`}>
                         <Link to={"/ressources/submissions"}>
