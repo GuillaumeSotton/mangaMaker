@@ -13,12 +13,12 @@ class Error404 extends React.Component{
         return(
             <>
                 <div id='error' style={style}>
-                    <h1 className="notFoundTitle">Oops! La page demandée n'existe pas.</h1>
+                    <h1 className="notFoundTitle">Oops! This page does not exist.</h1>
                     <p className="notFoundDesc">
-                        Il semble que rien n'a été trouvé à cette adresse.
-                        Cliquer sur le bouton ci-dessous pour retourner à la page principale.
+                        It seems that nothing has been found at this URL.
+                        Click on the button to go back to the homepage.
                     </p>
-                    <Link to={"/"} className={"btn btn-outline-secondary"}>Retourner au menu</Link>
+                    <Link to={"/"} className={"btn btn-outline-secondary"}>Go back to the homepage</Link>
                 </div>
             </>
         );

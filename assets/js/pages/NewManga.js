@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 import { ProgressButton } from "../components/ProgressButton";
 import { StatusSelector } from "../components/StatusSelector";
@@ -206,7 +207,8 @@ class NewManga extends Component {
 
           <div className="row mb-4">
             <div className="col-12 text-right">
-              <ProgressButton label={"Create manga"} onClick={this.addManga} showSpinner={fetchInProgress} disabled={fetchInProgress} />
+              <Link to={"/"} className="btn btn-outline-primary">Cancel</Link>
+              <ProgressButton label={"Create manga"} type="primary ml-2" onClick={this.addManga} showSpinner={fetchInProgress} disabled={fetchInProgress} />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 
 import { api } from "../../config";
@@ -93,7 +94,8 @@ class SubmitRessourcesCreator extends Component {
             <>
                 <div className="row mb-4">
                     <div className="col-12 text-right">
-                        <ProgressButton label={"Add ressource"} onClick={this.addRessource} showSpinner={fetchInProgress} disabled={canUpload || fetchInProgress}/>
+                        <Link to={"/"} className="btn btn-outline-primary">Cancel</Link>
+                        <ProgressButton label={"Add ressource"} type="primary ml-2" onClick={this.addRessource} showSpinner={fetchInProgress} disabled={canUpload || fetchInProgress}/>
                     </div>
                 </div>
 
