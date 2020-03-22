@@ -25,8 +25,6 @@ class SubmitRessourcesCreator extends Component {
     };
 
     onChange = (name, value) => {
-        const ressource = { ...this.state.ressource };
-        console.log(name,value);
         if(name === "genre"){
             this.setState({genre: Number.parseInt(value)});
         }

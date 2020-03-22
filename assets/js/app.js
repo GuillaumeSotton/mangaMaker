@@ -12,6 +12,7 @@ import { Homepage } from "./pages/Homepage";
 import { User } from "./pages/User";
 import { Users } from "./pages/Users";
 import { SubmitRessources } from "./pages/SubmitRessources";
+import { NewManga } from "./pages/NewManga";
 import { AdminBase } from "./pages/AdminBase";
 import { Universes } from "./pages/admin/Universes/Universes";
 import { Characters } from "./pages/admin/Characters/Characters.js";
@@ -38,6 +39,7 @@ class App extends Component {
                     <Route path="/admin/characters" exact component={Characters}/>
                     <Route path="/admin/genre" exact component={Genre}/>
                     <Route path="/admin" exact component={AdminBase}/>
+                    <Route path="/new-manga" exact component={NewManga}/>
                     <Route path="/ressources/submissions" exact component={SubmitRessources}/>
                     <Route exact path="/users/:id(\d+)" component={User}/>
                     <Route path="/users" exact component={Users}/>
