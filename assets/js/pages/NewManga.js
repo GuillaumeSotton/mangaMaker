@@ -64,11 +64,12 @@ class NewManga extends Component {
   }
 
   addManga = async () => {
-    const { chapters, file, language, name, status, summary, volumes } = this.state;
+    const { chapters, characters, file, language, name, status, summary, volumes } = this.state;
 
     const formData = new FormData();
     formData.append("file", file);
     formData.append("chapters", chapters);
+    formData.append("characters", characters);
     formData.append("language", language);
     formData.append("name", name);
     formData.append("status", status);

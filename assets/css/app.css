@@ -3,12 +3,18 @@ body {
     padding: 0;
 }
 
+/* Adapt the size of the container  */
+@media (min-width: 1200px){
+.container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1300px;
+}
+}
+
 @keyframes appear
 {
     from { right: -500px; }
     to { right: 50px; }
 }
-
 
 
 .move-enter {

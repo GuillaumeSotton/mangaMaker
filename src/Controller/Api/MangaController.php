@@ -50,7 +50,7 @@ class MangaController extends AbstractController
         /** @var UploadedFile $file */
         $file = $request->files->get("file");
         $chapters = $request->request->get("chapters");
-        $characters = $request->request->get("chracters");
+        $characters = $request->request->get("characters");
         $language = $request->request->get("language");
         $name = $request->request->get("name");
         $status = $request->request->get("status");
