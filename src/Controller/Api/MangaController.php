@@ -86,7 +86,7 @@ class MangaController extends AbstractController
 
         $manga = new Manga();
         $manga->setCreatedAt($date);
-        $manga->setCharacters(str_split($characters));
+        $manga->setCharacters(explode(",",$characters));
         $manga->setAuthor($user);
         $manga->setFile($filename);
         $manga->setFilePath($filePath);
