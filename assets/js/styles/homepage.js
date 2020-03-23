@@ -7,7 +7,7 @@ export const homepage = () => {
 
       hovereffect : {
         width:"100%",
-        maxWidth: "400px",
+        maxWidth: "375px",
         cursor:"default",
         "&:hover":{
           MsTransform:"scale(1.1)",

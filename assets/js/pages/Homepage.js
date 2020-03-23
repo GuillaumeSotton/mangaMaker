@@ -19,23 +19,28 @@ class Homepage extends Component {
             <>
             <div className="container">
                 <div className={"row mb-5 mt-5"}>
-                    <div id="block1" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
+                    <div id="block1" className={`col-lg-4 col-md-6 mb-4 ${classes.center}`}>
                         <Link to={"/new-manga"}>
                             <img src="/images/create.png" className={classes.hovereffect}/>
                         </Link>
                     </div>
-                    <div id="block4" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
+                    <div id="block4" className={`col-lg-4 col-md-6 mb-4 ${classes.center}`}>
                         <img src="/images/make.png" className={classes.hovereffect}/>
                     </div>
-                    <div id="block2" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
+                    <div id="block2" className={`col-lg-4 col-md-6 mb-4 ${classes.center}`}>
                         <Link to={"/mangas"}>
                             <img src="/images/discover.png" className={classes.hovereffect}/>
                         </Link>
                     </div>
-                    <div id="block3" className={`col-lg-3 col-md-6 mb-4 ${classes.center}`}>
+                    <div id="block3" className={`col-lg-4 col-md-6 mb-4 ${classes.center}`}>
                         <Link to={"/ressources/submissions"}>
                             <img src="/images/submit.png" className={classes.hovereffect}/>
                         </Link>
+                    </div>
+                    <div id="block5" className={`col-lg-4 col-md-6 mb-4 ${classes.center}`}>
+
+                            <img src="/images/galery.png" className={classes.hovereffect}/>
+
                     </div>
 
                 </div>
