@@ -32,12 +32,12 @@ class Homepage extends Component {
                             <img src="/images/discover.png" className={classes.hovereffect}/>
                         </Link>
                     </div>
-                    <div id="block3" className={`col-lg-4 col-md-6 mb-4 ${classes.center}`}>
+                    <div id="block3" className={`col-lg-6 col-md-6 mb-4 ${classes.center}`}>
                         <Link to={"/ressources/submissions"}>
                             <img src="/images/submit.png" className={classes.hovereffect}/>
                         </Link>
                     </div>
-                    <div id="block5" className={`col-lg-4 col-md-6 mb-4 ${classes.center}`}>
+                    <div id="block5" className={`col-lg-6 col-md-6 mb-4 ${classes.center}`}>
 
                             <img src="/images/galery.png" className={classes.hovereffect}/>
 
