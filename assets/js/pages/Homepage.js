@@ -39,7 +39,7 @@ class Homepage extends Component {
                     </div>
                     <div id="block5" className={`col-lg-6 col-md-6 mb-4 ${classes.center}`}>
 
-                            <img src="/images/galery.png" className={classes.hovereffect}/>
+                            <img src="/images/gallery.png" className={classes.hovereffect}/>
 
                     </div>
 
