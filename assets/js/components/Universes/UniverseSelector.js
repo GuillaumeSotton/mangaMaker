@@ -12,7 +12,7 @@ class UniverseSelector extends Component {
         isrequired: PropTypes.bool,
         name: PropTypes.string,
         onChange: PropTypes.func.isRequired,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     };
 
     state = {

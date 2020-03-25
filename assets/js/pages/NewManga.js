@@ -133,6 +133,7 @@ class NewManga extends Component {
                   </div>
                 </div>
                 <div className="col-5">
+
                   <div className="container">
                     <div className="row">
                       <div className="col-6 mt-3">
@@ -183,7 +184,7 @@ class NewManga extends Component {
                 <div className="col-4">
                   <div className="mt-3">
                     <label htmlFor="description">Summary:</label>
-                    <textarea className={`form-control }`} placeholder="..." rows="12" style={{resize: "none"}}
+                    <textarea className={`form-control }`} placeholder="..." rows="12" style={{ resize: "none" }}
                       id="summary" name={"summary"} value={summary || ""} onChange={e => this.onChange(e.target.name, e.target.value)} />
                   </div>
                 </div>

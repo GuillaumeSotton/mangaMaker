@@ -100,12 +100,16 @@ class Manga
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Universe", inversedBy="mangas")
      * @ORM\JoinColumn(nullable=false)
+     * 
+     * @Groups({"essential"})
      */
     private $universe;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Genre", inversedBy="mangas")
      * @ORM\JoinColumn(nullable=false)
+     * 
+     * @Groups({"essential"})
      */
     private $genre;
 
