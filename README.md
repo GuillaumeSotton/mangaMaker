@@ -1,7 +1,7 @@
 # Manga Maker
 
 L'application fonctionne avec Docker. Le stack technique est le suivant:
-  - FrontEnd: ReactJS
+  - FrontEnd: React JS
   - BackEnd: Symfony
   - BDD: MariaDB
   - WebServer: Nginx
